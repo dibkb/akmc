@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import AuthSwitchpage from "@/components/AuthSwitchpage";
 import logo from "../../img/logo.png";
 import Button from "@/components/button/Button";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -27,14 +27,8 @@ const Auth = () => {
           </Button>
         </div>
       </main>
-      <div className="absolute bottom-4 text-sm text-stone-600 font-medium flex items-center gap-2">
-        <p>Don&apos;t have an account?</p>
-        <Link
-          href={"/auth/signup"}
-          className="underline font-semibold underline-offset-3 text-stone-700"
-        >
-          Signup
-        </Link>
+      <div className="absolute bottom-4">
+        <AuthSwitchpage type="login" />
       </div>
     </div>
   );
