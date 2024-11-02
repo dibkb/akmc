@@ -3,14 +3,21 @@
 import { cn } from "@/lib/utils";
 import google from "../../img/Google icon.png";
 import React from "react";
+import { BACKEND_URL } from "@/config";
 interface GoogleButtonProps {
-  onClick: () => void;
   className?: string;
 }
-const GoogleButton = ({ onClick, className }: GoogleButtonProps) => {
+const GoogleButton = ({ className }: GoogleButtonProps) => {
+  const handleGoogleLogin = async () => {
+    try {
+      window.location.href = `${BACKEND_URL}/auth/google`;
+    } catch (err) {
+      console.error("Google login error:", err);
+    }
+  };
   return (
     <button
-      onClick={onClick}
+      onClick={handleGoogleLogin}
       className={cn(
         "flex items-center gap-3 border border-stone-300 px-4 py-3 rounded-lg whitespace-nowrap",
         className

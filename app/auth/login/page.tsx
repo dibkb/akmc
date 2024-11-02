@@ -27,10 +27,7 @@ const Login = () => {
           <Separator className="flex-1" />
         </div>
         <section className="w-full">
-          <GoogleButton
-            onClick={() => {}}
-            className="w-full text-sm font-medium hover:border-stone-900"
-          />
+          <GoogleButton className="w-full text-sm font-medium hover:border-stone-900" />
         </section>
       </main>
     </div>
