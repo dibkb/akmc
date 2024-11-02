@@ -5,11 +5,12 @@ import { redirect, useSearchParams } from "next/navigation";
 
 import React, { Suspense, useEffect } from "react";
 
-const Verfy = () => {
+const VerifyContent = () => {
   const { setJwtAccessToken, setUserInfo } = useAuthStore();
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
   const email = searchParams.get("email");
+
   useEffect(() => {
     baseUrl.get(`/auth/user/${email}`).then((res) => {
       if (res.status === 200) {
@@ -20,11 +21,15 @@ const Verfy = () => {
       }
     });
   }, [email, setUserInfo, setJwtAccessToken, token]);
+
+  return <div className="container mx-auto mt-4 text-lg">Verifying....</div>;
+};
+
+const Verify = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="container mx-auto mt-4 text-lg">Verifying....</div>
+      <VerifyContent />
     </Suspense>
   );
 };
-
-export default Verfy;
+export default Verify;
