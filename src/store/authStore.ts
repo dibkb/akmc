@@ -3,8 +3,8 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 export interface UserInfo {
   email: string;
-  id: number;
-  profilePic: string;
+  id?: number;
+  profilePic?: string;
 }
 interface AuthState {
   jwtAccessToken: string | null;
