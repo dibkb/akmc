@@ -1,9 +1,9 @@
 "use client";
 import { baseUrl } from "@/axios/baseurl";
 import useAuthStore, { UserInfo } from "@/src/store/authStore";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 
 const Verfy = () => {
   const { setJwtAccessToken, setUserInfo } = useAuthStore();
@@ -12,12 +12,19 @@ const Verfy = () => {
   const email = searchParams.get("email");
   useEffect(() => {
     baseUrl.get(`/auth/user/${email}`).then((res) => {
-      const data = res.data as UserInfo;
-      setUserInfo(data);
-      setJwtAccessToken(token);
+      if (res.status === 200) {
+        const data = res.data as UserInfo;
+        setUserInfo(data);
+        setJwtAccessToken(token);
+        return redirect("/");
+      }
     });
   }, [email, setUserInfo, setJwtAccessToken, token]);
-  return <div className="container mx-auto mt-4 text-lg">Verifying....</div>;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="container mx-auto mt-4 text-lg">Verifying....</div>
+    </Suspense>
+  );
 };
 
 export default Verfy;
