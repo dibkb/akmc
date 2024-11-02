@@ -1,6 +1,6 @@
 import axios from "axios";
-import useAuthStore from "@/app/src/stores/authStore";
 import { BACKEND_URL } from "@/config";
+import useAuthStore from "@/src/store/authStore";
 
 const authorizedApi = axios.create({
   baseURL: BACKEND_URL,
