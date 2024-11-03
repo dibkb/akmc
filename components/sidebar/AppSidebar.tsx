@@ -11,11 +11,11 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import useAuthStore from "@/src/store/authStore";
 import logo from "../../img/logo.png";
 import { LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { OwnAvatar } from "../home/OwnAvatar";
 const items = [
   {
     title: "Copywriting best practices with another copywriter",
@@ -82,10 +82,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu className="flex flex-row items-center gap-3">
-          <Avatar className="size-9">
-            <AvatarImage src={userInfo?.profilePic} />
-            <AvatarFallback>AK</AvatarFallback>
-          </Avatar>
+          <OwnAvatar />
           <p className="text-xs text-stone-700 font-medium">
             {userInfo?.email}
           </p>

@@ -1,5 +1,6 @@
 "use client";
 
+import HomeFull from "@/components/home/HomeFull";
 import Homempty from "@/components/home/Homempty";
 import { AppSidebar } from "@/components/sidebar/AppSidebar";
 import { SidebarTrigger } from "@/components/ui/sidebar";
@@ -22,9 +23,9 @@ export default function Home() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="h-[90vh] w-full">
+      <main className="h-[85vh] w-full">
         <SidebarTrigger />
-        <Homempty />
+        <HomeFull />
       </main>
     </SidebarProvider>
   );
