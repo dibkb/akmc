@@ -1,31 +1,33 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
-export interface UserInfo {
-  email: string;
-  id?: number;
-  profilePic?: string;
+export interface Chat {
+  role: "user" | "system";
+  message: string;
 }
 interface AuthState {
-  jwtAccessToken: string | null;
-  setJwtAccessToken: (token: string | null) => void;
-  userInfo: UserInfo | null;
-  setUserInfo: (user: UserInfo) => void;
-  clearTokens: () => void;
+  chats: Chat[] | null;
+  setChats: (mess: Chat) => void;
+  input: string;
+  setInput: (i: string) => void;
 }
 
 const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
-      jwtAccessToken: null,
-      setJwtAccessToken: (token: string | null) =>
-        set({ jwtAccessToken: token }),
-      userInfo: null,
-      setUserInfo: (token: UserInfo) => set({ userInfo: token }),
-      clearTokens: () => set({ jwtAccessToken: null, userInfo: null }),
+      chats: null,
+      setChats: (mess: Chat) =>
+        set((state) => ({
+          chats: state.chats ? [...state.chats, mess] : [mess],
+        })),
+      input: "",
+      setInput: (i: string) =>
+        set(() => ({
+          input: i,
+        })),
     }),
     {
-      name: "auth-storage",
+      name: "akmc-chat",
       storage: createJSONStorage(() => localStorage),
     }
   )
