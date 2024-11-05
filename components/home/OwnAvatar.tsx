@@ -20,7 +20,6 @@ const OwnAvatar = ({ className }: AvatarProps) => {
 export { OwnAvatar };
 
 const AkmcAvatar = ({ className }: AvatarProps) => {
-  const { userInfo } = useAuthStore();
   return (
     <Avatar className={cn("size-9 border-red-600", className)}>
       <AvatarImage src={logo.src} />
