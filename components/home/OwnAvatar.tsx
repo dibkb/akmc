@@ -2,16 +2,18 @@
 import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { cn } from "@/lib/utils";
-import useAuthStore from "@/src/store/authStore";
 import logo from "../../img/logo.png";
 interface AvatarProps {
   className?: string;
 }
 const OwnAvatar = ({ className }: AvatarProps) => {
-  const { userInfo } = useAuthStore();
   return (
     <Avatar className={cn("size-9", className)}>
-      <AvatarImage src={userInfo?.profilePic} />
+      <AvatarImage
+        src={
+          "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+        }
+      />
       <AvatarFallback>AK</AvatarFallback>
     </Avatar>
   );
