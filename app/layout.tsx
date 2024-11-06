@@ -26,6 +26,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://cdn.oaistatic.com/assets/favicon-32x32-p4ktpm1x.webp"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://cdn.oaistatic.com/assets/favicon-dark-32x32-gt5kfzyp.webp"
+          media="(prefers-color-scheme: dark)"
+        />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          sizes="32x32"
+          href="https://cdn.oaistatic.com/assets/favicon-o20kmmos.svg"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

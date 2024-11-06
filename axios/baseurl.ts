@@ -1,7 +1,7 @@
-import { BACKEND_URL } from "@/config";
 import axios from "axios";
 
 const baseUrl = axios.create({
-  baseURL: BACKEND_URL,
+  baseURL: "https://akmc-server.vercel.app",
+  // baseURL: "http://localhost:8000",
 });
 export { baseUrl };
