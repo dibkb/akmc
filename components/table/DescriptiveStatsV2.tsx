@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   TableBody,
@@ -24,7 +26,9 @@ export function DescriptiveV2Table() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px] whitespace-nowrap">Metic</TableHead>
+            <TableHead className="w-[100px] whitespace-nowrap">
+              Metric
+            </TableHead>
             <TableHead className="text-right">Value</TableHead>
           </TableRow>
         </TableHeader>

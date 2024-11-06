@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   TableBody,
@@ -6,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Card } from "../ui/card";
 
 const chartData = [
   {
@@ -71,29 +74,33 @@ const chartData = [
 
 export function SeverityOsTable() {
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Operating System</TableHead>
-          <TableHead>CRITICAL</TableHead>
-          <TableHead>HIGH</TableHead>
-          <TableHead>LOW</TableHead>
-          <TableHead>MEDIUM</TableHead>
-          <TableHead className="text-right">TOTAL</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {chartData.map((c, id) => (
-          <TableRow key={id}>
-            <TableCell>{c.software}</TableCell>
-            <TableCell>{c.CRITICAL}</TableCell>
-            <TableCell>{c.HIGH}</TableCell>
-            <TableCell>{c.LOW}</TableCell>
-            <TableCell>{c.MEDIUM}</TableCell>
-            <TableCell className="text-right">{c.TOTAL}</TableCell>
+    <Card className="p-1">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px] whitespace-nowrap">
+              Operating System
+            </TableHead>
+            <TableHead>CRITICAL</TableHead>
+            <TableHead>HIGH</TableHead>
+            <TableHead>LOW</TableHead>
+            <TableHead>MEDIUM</TableHead>
+            <TableHead className="text-right">TOTAL</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {chartData.map((c, id) => (
+            <TableRow key={id}>
+              <TableCell className="whitespace-nowrap">{c.software}</TableCell>
+              <TableCell>{c.CRITICAL}</TableCell>
+              <TableCell>{c.HIGH}</TableCell>
+              <TableCell>{c.LOW}</TableCell>
+              <TableCell>{c.MEDIUM}</TableCell>
+              <TableCell className="text-right">{c.TOTAL}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Card>
   );
 }
