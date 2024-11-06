@@ -54,7 +54,7 @@ const chartConfig = {
 
 export function OsPie() {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col h-full">
       <CardHeader className="items-center pb-0">
         <CardTitle>Operating System most affected</CardTitle>
       </CardHeader>

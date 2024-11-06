@@ -53,7 +53,7 @@ const chartConfig = {
 
 export function SeverityPie() {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col h-full">
       <CardHeader className="items-center pb-0">
         <CardTitle>Severity Count</CardTitle>
       </CardHeader>

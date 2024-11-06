@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,8 +29,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="mx-auto flex justify-center space-x-4 p-4">
+          <Link
+            href="/"
+            className="px-3 py-2 rounded-md text-sm font-semibold text-stone-700 hover:text-red-600 hover:bg-red-200 hover:bg-opacity-20 transition duration-300"
+          >
+            Home
+          </Link>
+          <Link
+            href="/eda"
+            className="px-3 py-2 rounded-md text-sm font-semibold text-stone-700 hover:text-red-600 hover:bg-red-200 hover:bg-opacity-20 transition duration-300"
+          >
+            Report
+          </Link>
+        </nav>
         {children}
-        <Toaster />
       </body>
     </html>
   );

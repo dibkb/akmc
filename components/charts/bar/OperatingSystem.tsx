@@ -40,7 +40,7 @@ export function OsBar() {
         <CardTitle>Operating System most affected</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} className="">
           <BarChart
             accessibilityLayer
             data={chartData}
