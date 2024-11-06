@@ -21,7 +21,7 @@ const HomeFull = () => {
       <div className="h-full flex justify-center overflow-auto mb-4">
         <section className="max-w-[800px] md:w-[600px] py-4 px-4">
           <h3 className="font-serif text-center text-xl">
-            Teaching Strategies for Multiplication
+            {chats?.length && chats[0].message}
           </h3>
 
           <main className="mt-4">
@@ -35,8 +35,7 @@ const HomeFull = () => {
                         <p>{ele.message}</p>
                       </div>
                       <p className="mb-2 font-serif text-stone-500 italic">
-                        Rephrased Query:{" "}
-                        {ele?.rephrased?.split("Rephrased Query:")[1]}
+                        {ele?.rephrased}
                       </p>
                     </main>
                   );
