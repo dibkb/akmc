@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import { SeverityBar } from "../charts/bar/Severity";
-import { SeverityPie } from "../charts/pie/Severity";
 import { VendorPie } from "../charts/pie/Vendor";
 import { VendorRadar } from "../charts/radar/Vendor";
 
@@ -13,11 +11,11 @@ const Vendor = () => {
       </h3>
       <p className="my-4 text-sm text-stone-600">
         This report provides a detailed analysis of the top vendors based on the
-        number of recorded vulnerabilities. Each vendor's security challenges
-        are unique to the nature of its products and the sectors it serves.
-        Understanding these vulnerabilities helps inform targeted security
-        measures and underscores the importance of timely patching and risk
-        management across widely used software and hardware solutions.
+        number of recorded vulnerabilities. Each vendor&apos;s security
+        challenges are unique to the nature of its products and the sectors it
+        serves. Understanding these vulnerabilities helps inform targeted
+        security measures and underscores the importance of timely patching and
+        risk management across widely used software and hardware solutions.
       </p>
       <div className="mb-6 text-sm">
         <ul className="list-disc list-inside text-stone-600 my-2">

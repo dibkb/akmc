@@ -3,6 +3,7 @@ import AffectedProtocols from "@/components/eda/AffectedProtocols";
 import Ids from "@/components/eda/Ids";
 import NetworkRequirements from "@/components/eda/NetworkRequirements";
 import OperatingSystem from "@/components/eda/OperatingSystem";
+import Priviledges from "@/components/eda/Priviledges";
 import Severity from "@/components/eda/Severity";
 import Software from "@/components/eda/Software";
 import Vendor from "@/components/eda/Vendor";
@@ -19,6 +20,7 @@ const EdaPage = () => {
       <AffectedProtocols />
       <NetworkRequirements />
       <Vendor />
+      <Priviledges />
     </div>
   );
 };

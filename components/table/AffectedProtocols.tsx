@@ -58,7 +58,7 @@ export function AffectedprotocolsTable() {
         <TableBody>
           {chartData.map((c, id) => (
             <TableRow key={id}>
-              <TableCell className="whitespace-nowrap font-semibold">
+              <TableCell className="whitespace-nowrap font-medium">
                 {c.Protocol}
               </TableCell>
               <TableCell>{c.Description}</TableCell>

@@ -36,7 +36,7 @@ export function HistogramComponent() {
                 className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
                 onClick={() => setActiveChart(key as "CVSS-V2" | "CVSS-V3")}
               >
-                <span className="text-xs font-bold">{key}</span>
+                <span className="text-xl text-stone-700 font-bold">{key}</span>
               </button>
             );
           })}
