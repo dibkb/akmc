@@ -6,8 +6,28 @@ export interface Chat {
   message: string;
   rephrased?: string;
 }
+export interface DescriptionResponse {
+  Operating_System: string;
+  Software_Component: string;
+  Version: string;
+  Impact: string;
+  Affected_Hardware: string;
+  Network_Requirements: string;
+  Affected_Protocols: string;
+  Authentication_Required: string;
+  Privileges_Required: string;
+  User_Interaction_Required: string;
+  Vendor: string;
+}
+export interface DescriptionChat {
+  role: "user" | "system";
+  messageUser?: string;
+  description?: DescriptionResponse;
+}
 interface AuthState {
   chats: Chat[] | null;
+  description: DescriptionChat[] | null;
+  setDescription: (des: DescriptionChat) => void;
   setChats: (mess: Chat) => void;
   input: string;
   setInput: (i: string) => void;
@@ -23,6 +43,13 @@ const useAuthStore = create<AuthState>()(
       setLoading: (c: boolean) =>
         set(() => ({
           loading: c,
+        })),
+      description: null,
+      setDescription: (desc: DescriptionChat) =>
+        set((state) => ({
+          description: state.description
+            ? [...state.description, desc]
+            : [desc],
         })),
       chats: null,
       setChats: (mess: Chat) =>
