@@ -34,7 +34,7 @@ const ChatinputDesc = ({ onClick }: CHatinputProps) => {
   return (
     <div className="flex flex-col sm:flex-col gap-4 max-w-full sm:max-w-[600px] w-ful">
       <Textarea
-        className="bg-transparent flex-grow outline-none min-w-full sm:min-w-[450px] mb-2 sm:mb-0"
+        className="bg-transparent flex-grow outline-none min-w-full sm:min-w-[450px] mb-2 sm:mb-0 min-h-[200px]"
         placeholder="Enter your description here...."
         value={input}
         onChange={(e) => setInput(e.target.value)}

@@ -15,7 +15,6 @@ const Descriptiontable = ({
 }: {
   chartData: DescriptionResponse;
 }) => {
-  console.log(Object.entries(chartData));
   return (
     <Card className="p-1 my-4">
       <Table>

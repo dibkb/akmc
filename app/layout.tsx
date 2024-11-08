@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import Navbar from "@/components/Navbar";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -52,28 +51,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="mx-auto flex justify-center space-x-4 p-4">
-          <Link
-            href="/"
-            className={cn(
-              "px-3 py-2 rounded-md text-sm font-semibold text-stone-700 hover:text-red-600 hover:bg-red-200 hover:bg-opacity-20 transition duration-300"
-            )}
-          >
-            Query
-          </Link>
-          <Link
-            href="/description"
-            className="px-3 py-2 rounded-md text-sm font-semibold text-stone-700 hover:text-red-600 hover:bg-red-200 hover:bg-opacity-20 transition duration-300"
-          >
-            Description
-          </Link>
-          <Link
-            href="/eda"
-            className="px-3 py-2 rounded-md text-sm font-semibold text-stone-700 hover:text-red-600 hover:bg-red-200 hover:bg-opacity-20 transition duration-300"
-          >
-            Report
-          </Link>
-        </nav>
+        <Navbar />
         {children}
       </body>
     </html>

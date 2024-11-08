@@ -64,6 +64,7 @@ const useAuthStore = create<AuthState>()(
       clearAll: () =>
         set(() => ({
           chats: null,
+          description: null,
           loading: false,
           input: "",
         })),
